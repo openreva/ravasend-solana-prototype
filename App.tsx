@@ -39,7 +39,7 @@ function Payments() {
   };
   return <ScrollView contentContainerStyle={s.page}>
     <Text style={s.tag}>RAVASEND · SOLANA MOBILE</Text>
-    <Text style={s.title}>Move value.\nKeep control.</Text>
+    <Text style={s.title}>{'Move value.\nKeep control.'}</Text>
     <Text style={s.notice}>DEVNET PROTOTYPE — test SOL only. This separate app does not connect to Ravasend customer balances or fiat payouts.</Text>
     <Pressable disabled={busy} style={s.button} onPress={() => void run(async () => {
       if (account) { await disconnect(); setStatus('Disconnected.'); } else { await connect(); setStatus('Wallet connected.'); }

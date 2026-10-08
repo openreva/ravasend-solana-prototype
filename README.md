@@ -24,4 +24,6 @@ For EAS: sign into your Expo account, create a NEW project for this prototype (n
 
 ## Current verification status
 
-TypeScript check passed. APK/device test and transaction evidence remain outstanding. npm reported 39 dependency vulnerabilities (15 moderate, 24 high); review before distribution. No claim of production security or hackathon eligibility is made.
+TypeScript check passed. An initial signed APK was built, but device tests and transaction evidence remain outstanding. On 8 October, the three portal-flagged dependencies were patched: image-size 2.0.4, postcss 8.5.29 and uuid 11.1.1. The local npm audit still reports 26 findings (5 moderate, 21 high), including transitive build-tool advisories with no available patched versions for braces, node-forge and sprintf-js. This is not a clean security audit. No claim of production security or hackathon eligibility is made.
+
+The lockfile is authoritative for reproducibility. `.npmrc` preserves the peer-resolution mode used to generate it; nanostores is explicitly installed for the wallet UI runtime. Do not use `npm audit fix --force`: its proposed Expo downgrade is incompatible with this SDK.
